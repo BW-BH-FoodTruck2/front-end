@@ -1,2 +1,2 @@
 # front-end
-this is for the react devs
+this is for the react devs... ftw
