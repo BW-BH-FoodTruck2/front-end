@@ -27,6 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+html { 
+  background: url(./images/food-truck2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 @keyframes App-logo-spin {
   from {
