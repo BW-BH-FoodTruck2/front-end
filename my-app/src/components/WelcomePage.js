@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from "react-router-dom"
 
 const Form = styled.form`
 display:flex
@@ -10,7 +11,7 @@ height:310px
 align-items:center
 justify-content:center
 margin:0 26.5%
-margin-top:8.5%
+margin-top:6%
 `;
 const Div = styled.div`
   display:flex
@@ -51,9 +52,16 @@ export default function WelcomePage(){
       name='Password'
       type='text'
       />
-      <br/>
-      <Button> Sign Up </Button>
       </Div>
+      <br/>
+      
+      <button > Sign In </button>
+
+      <Link to='./SignUp'>
+      <button > Sign Up </button>
+      </Link>
+      
+      
     </Form>
       
     </section>
