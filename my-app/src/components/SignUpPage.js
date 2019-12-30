@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom"
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 const Form = styled.form`
 display:flex
@@ -22,7 +24,7 @@ const Div = styled.div`
 `;
 
 const H1 = styled.h1`
-margin: 1% 22%
+margin: .5% 22%
 
 `;
 const H2 = styled.h2`
@@ -30,6 +32,16 @@ const H2 = styled.h2`
 `;
 
 export default function SignUpPage(){
+    const useStyles = makeStyles(theme => ({
+        root: {
+          '& > *': {
+            margin: theme.spacing(1),
+            width: 200,
+          },
+        },
+      }));
+      
+      const classes = useStyles();
     return (
 <section className="welcome-page">
         <H1>Welcome to the best place to find food trucks near you,<br/> come join the many people who love and enjoy food truck near them!</H1>
@@ -39,27 +51,24 @@ export default function SignUpPage(){
       <H2> Sign Up </H2>
 
     <Div>
-      <input 
+    <TextField id="standard-basic" label="Email" 
       id='email'
-      placeholder='Email'
       name='Email'
       type='text'
       />
     </Div>
 
     <Div>
-      <input 
+    <TextField id="standard-basic" label="User Name" 
       id='userName'
-      placeholder='UserName'
       name='UserName'
       type='text'
       />
     </Div>
 
     <Div>
-    <input 
+    <TextField id="standard-basic" label="Password" 
       id='password'
-      placeholder='Password'
       name='Password'
       type='text'
       />

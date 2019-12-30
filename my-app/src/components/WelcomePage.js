@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 const Form = styled.form`
 display:flex
 flex-direction:column
 background-color: grey
-width:30.5%
-height:310px
+width:32%
+height:20%
 align-items:center
 justify-content:center
 margin:0 26.5%
@@ -30,30 +32,41 @@ const H2 = styled.h2`
 `;
 
 export default function WelcomePage(){
+  const useStyles = makeStyles(theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: 200,
+      },
+    },
+  }));
+  
+  const classes = useStyles();
     return (
 <section className="welcome-page">
       
         <H1>Welcome to the best place to find food trucks near you!</H1>
-        <Form> 
+<Form className={classes.root} noValidate autoComplete="off">
       <Div>
       <H2> Sign In </H2>
-      <input 
+      
+      <TextField id="standard-basic" label="User Name"  
       id='userName'
-      placeholder='UserName'
       name='UserName'
       type='text'
       />
+
     </Div>
+
     <Div>
-    <input 
+    <TextField id="standard-basic" label="Password"  
       id='password'
-      placeholder='Password'
       name='Password'
       type='text'
       />
-      </Div>
-      <br/>
-    
+  </Div>
+
+      
     <div class="welcome">
       <Button variant="contained" color="primary" href="#contained-buttons">
         Sign In 
@@ -65,7 +78,7 @@ export default function WelcomePage(){
     </Button>
     </div>
       
-    </Form>
+</Form>
       
     </section>
 
