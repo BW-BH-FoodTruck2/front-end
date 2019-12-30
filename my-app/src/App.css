@@ -39,9 +39,14 @@ display:flex;
 justify-content: space-around;
 text-decoration: none;
 font-size: 2rem;
-border: 2px solid red
 }
-
+.welcome{
+  display:flex;
+  flex-direction:column;
+}
+.SignUpButton{
+  margin:2%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

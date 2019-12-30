@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from "react-router-dom"
+import Button from '@material-ui/core/Button';
 
 const Form = styled.form`
 display:flex
@@ -19,9 +20,7 @@ const Div = styled.div`
   margin:1%
   justify-content:center
 `;
-const Button = styled.button`
-margin:0 auto
-`;
+
 const H1 = styled.h1`
 margin: 2% 26.5%
 
@@ -54,13 +53,17 @@ export default function WelcomePage(){
       />
       </Div>
       <br/>
-      
-      <button > Sign In </button>
-
-      <Link to='./SignUp'>
-      <button > Sign Up </button>
-      </Link>
-      
+    
+    <div class="welcome">
+      <Button variant="contained" color="primary" href="#contained-buttons">
+        Sign In 
+      </Button>
+    
+    <p>No account yet? Creat one now!</p>
+    <Button variant="contained" color="primary" href="#contained-buttons" component={Link} to="/SignUp">
+      Sign Up
+    </Button>
+    </div>
       
     </Form>
       
