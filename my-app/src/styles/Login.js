@@ -101,16 +101,16 @@ export const LoginPage = styled.div`
 			}
 			color: rgba(0, 0, 0, 0.5);
 		}
-		span {
-			font-family: Poppins;
-			font-style: normal;
-			font-weight: 600;
-			font-size: 14px;
-			line-height: 157.97%;
-			/* identical to box height, or 22px */
+		// span {
+		// 	font-family: Poppins;
+		// 	font-style: normal;
+		// 	font-weight: 600;
+		// 	font-size: 14px;
+		// 	line-height: 157.97%;
+		// 	/* identical to box height, or 22px */
 
-			color: #362e34;
-		}
+		// 	color: #362e34;
+		// }
 	}
 `;
 
