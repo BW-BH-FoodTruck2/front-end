@@ -1,5 +1,5 @@
 import { GET_START, GET_SUCCESS, GET_FAILURE } from '../actions/actions';
-import styles from 'styled-components';
+
 
 let initialState = {
 	error    : null,
