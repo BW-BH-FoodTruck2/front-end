@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './actions/actions';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -39,7 +39,7 @@ function App (props){
 		<div className='App'>
 			<Header toggleLogin={toggleLogin} logOut={logOut} isLoggedIn={isLoggedIn} />
 			<Route exact path='/register' component={Register} />
-			<PrivateRouter path='/' component={Home} />
+			<PrivateRouter exact path='/' component={Home} />
 			<Route exact path='/login' component={Login} />
 		</div>
 	);
