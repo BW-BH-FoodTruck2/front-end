@@ -5,7 +5,6 @@ import { Wrapper, LoginPage, Button } from '../styles/Login.js';
 import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-
 const Login = (props) => {
 	const [ credentials, setCredentials ] = useState({
 		role     : 1,
@@ -23,7 +22,7 @@ const Login = (props) => {
 				console.log(credentials);
 				console.log('LOGIN RESPONSE: ', response);
 				localStorage.setItem('token', response.data.payload);
-				props.history.push('/protected');
+				props.history.push('/');
 			})
 			.catch((error) => {
 				console.log(credentials);
@@ -45,7 +44,7 @@ const Login = (props) => {
 
 	return (
 		<div>
-			<Wrapper>
+			<div>
 				<LoginPage>
 					<h2 className='log-in-h2'>Log In</h2>
 					<form onSubmit={submitHandler} autoComplete='off'>
@@ -84,7 +83,7 @@ const Login = (props) => {
 						<Button type='submit'>Log In</Button>
 					</form>
 				</LoginPage>
-			</Wrapper>
+			</div>
 		</div>
 	);
 };
