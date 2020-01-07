@@ -38,9 +38,9 @@ function App (props){
 	return (
 		<div className='App'>
 			<Header toggleLogin={toggleLogin} logOut={logOut} isLoggedIn={isLoggedIn} />
+			<Route exact path='/register' component={Register} />
 			<PrivateRouter path='/' component={Home} />
 			<Route exact path='/login' component={Login} />
-			<Route exact path='/register' component={Register} />
 		</div>
 	);
 }
