@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import styles from 'styled-components';
+
 
 export const PrivateRouter = ({ component: Component, ...rest }) => {
 	return (
