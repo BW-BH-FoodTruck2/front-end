@@ -21,7 +21,7 @@ const Login = (props) => {
 			.then((response) => {
 				console.log(credentials);
 				console.log('LOGIN RESPONSE: ', response);
-				localStorage.setItem('token', response.data.payload);
+				localStorage.setItem('token', response.data.token);
 				props.history.push('/');
 			})
 			.catch((error) => {
