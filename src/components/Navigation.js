@@ -19,7 +19,9 @@ const Navigation = () => {
 						</li>
 
 						<li className='mobile-hide'>
-							<a href='/'>About Us</a>
+							<Link exact to='/foodtrucktracker.netlify.com'>
+								About Us
+							</Link>
 						</li>
 
 						<li>
