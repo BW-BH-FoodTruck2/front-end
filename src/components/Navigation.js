@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
+const Navigation = () => {
+	const logOut = () => {
+		console.log('LOGGING OUT');
 
-const Navigation = (props) => {
+		localStorage.clear('token');
+		return <Redirect to='/login' />;
+	};
 	return (
 		<header className='main__header'>
 			<nav className='main__nav'>
@@ -23,7 +29,7 @@ const Navigation = (props) => {
 						</li>
 
 						<li>
-							<Link exact to='/' onClick={props.logOut}>
+							<Link exact to='/login' onClick={logOut}>
 								Log Out
 							</Link>
 						</li>

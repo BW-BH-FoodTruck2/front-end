@@ -1,69 +1,46 @@
-import { GET_START, GET_SUCCESS, GET_FAILURE } from '../actions/actions';
-
+import {
+	DELETE_TRUCK,
+	DELETE_TRUCK_SUCCESS,
+	DELETE_TRUCK_FAILURE,
+	UPDATE_TRUCK,
+	UPDATE_TRUCK_SUCCESS,
+	UPDATE_TRUCK_FAILURE
+} from '../actions/actions';
 
 let initialState = {
-	error    : null,
-	user_id  : null,
-	username : ''
+	trucks : []
 };
 
 export default function reducer (state = initialState, action){
 	switch (action.type) {
-		//*******************************************************
-		// //payload: none
-		// case REGISTER_START:
-		// 	return {
-		// 		...state,
-		// 		registering : true
-		// 	};
-		// case REGISTER_SUCCESS:
-		// 	return {
-		// 		...state,
-		// 		registering : false,
-		// 		registered  : true
-		// 	};
-		// case REGISTER_FAILURE:
-		// 	return {
-		// 		...state,
-		// 		registering : false,
-		// 		registered  : false
-		// 	};
-
-		//*******************************************************
-		// //payload: none
-		// case LOGIN_START:
-		// 	return {
-		// 		...state,
-		// 		loggingIn : true
-		// 	};
-		// case LOGIN_SUCCESS:
-		// 	localStorage.setItem('username', action.payload);
-		// 	return {
-		// 		...state,
-		// 		loggingIn : false,
-		// 		loggedIn  : true,
-		// 		username  : action.payload
-		// 	};
-		// case LOGIN_FAILURE:
-		// 	return {
-		// 		...state,
-		// 		loggingIn : false,
-		// 		loggedIn  : false
-		// 	};
-
-		// //*******************************************************
-		//payload: none
-		case GET_START:
+		case DELETE_TRUCK:
 			return {
 				...state
 			};
-		case GET_SUCCESS:
+		case DELETE_TRUCK_SUCCESS:
+			return {
+				...state,
+				trucks : action.payload
+			};
+		case DELETE_TRUCK_FAILURE:
+			return {
+				...state,
+				error : action.payload
+			};
+
+		case UPDATE_TRUCK:
 			return {
 				...state
 			};
-		case GET_FAILURE:
+		case UPDATE_TRUCK_SUCCESS:
 			return {
-				...state
+				...state,
+				trucks : action.payload
+			};
+		case UPDATE_TRUCK_FAILURE:
+			return {
+				...state,
+				error : action.payload
 			};
 		default:
 			return state;
