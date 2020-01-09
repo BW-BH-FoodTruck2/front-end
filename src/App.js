@@ -8,9 +8,12 @@ import Login from './components/Login';
 import Register from './components/Register';
 import TruckList from './components/ATruckList';
 import { PrivateRouter } from './components/PrivateRoute';
+import AddTruck from './components/AddTruck';
+import EditTruck from './components/EditTruck';
 
 function App (props){
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+	const [ trucks, setTrucks ] = useState([]);
 
 	useEffect(
 		() => {
@@ -27,19 +30,18 @@ function App (props){
 		e.preventDefault();
 	};
 
-	const logOut = (e) => {
-		e.preventDefault();
-		console.log('LOGGING OUT');
-
-		localStorage.removeItem('token');
-		window.location.reload();
-	};
-
 	return (
 		<div className='App'>
-			<Header toggleLogin={toggleLogin} logOut={logOut} isLoggedIn={isLoggedIn} />
+			<Header toggleLogin={toggleLogin} isLoggedIn={isLoggedIn} />
 			<Route exact path='/register' component={Register} />
+
 			<PrivateRouter exact path='/' component={TruckList} />
+
+			<Route
+				path='/edittruck/:slug'
+				render={(props) => <EditTruck {...props} trucks={trucks} setTrucks={setTrucks} />}
+			/>
+			<Route exact path='/addtruck' component={AddTruck} />
 			<Route exact path='/login' component={Login} />
 		</div>
 	);
