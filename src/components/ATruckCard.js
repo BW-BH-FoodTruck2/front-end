@@ -72,7 +72,7 @@ const ATruckCard = (props) => {
 				/>
 				<CardMedia className={classes.media} image={props.image} title={props.cuisine} />
 				<CardContent>
-					<p>The food available on this truck will is {props.cuisine}</p>
+					<p>The food available on this truck is {props.cuisine}</p>
 				</CardContent>
 
 				<CardActions disableSpacing>
