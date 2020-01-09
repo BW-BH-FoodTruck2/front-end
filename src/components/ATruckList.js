@@ -41,6 +41,7 @@ justify-content:center
 				{trucks.map((truck) => (
 					<ATruckCard
 						refresh={refresh}
+						trucksState={trucks}
 						setRefresh={setRefresh}
 						image={truck.imageURL}
 						key={truck.id}

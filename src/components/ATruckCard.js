@@ -13,6 +13,8 @@ import axios from 'axios';
 import TruckList from './ATruckList';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { deleteTruck } from '../actions/actions';
 
 const Span = styled.span`
 border-radius: 10px
@@ -45,18 +47,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ATruckCard = (props) => {
+	console.log();
 	const classes = useStyles();
 
-	const deleteTruck = () => {
-		axiosWithAuth()
-			.delete(`https://food-truck-trackr.herokuapp.com/api/trucks/${props.id}`)
-			.then((response) => {})
-			.catch((error) => {
-				console.log('DELETE TRUCK ERROR: ', error);
-			})
-			.finally(() => {
-				props.setRefresh(!props.refresh);
-			});
+	// const deleteTruck = () => {
+	// 	axiosWithAuth()
+	// 		.delete(`https://food-truck-trackr.herokuapp.com/api/trucks/${props.id}`)
+	// 		.then((response) => {})
+	// 		.catch((error) => {
+	// 			console.log('DELETE TRUCK ERROR: ', error);
+	// 		})
+	// 		.finally(() => {
+	// 			props.setRefresh(!props.refresh);
+	// 		});
+	// };
+	const submitDelete = () => {
+		props.deleteTruck(props.id);
+		props.setRefresh(!props.refresh);
 	};
 
 	return (
@@ -81,20 +88,15 @@ const ATruckCard = (props) => {
 							<IconButton>Edit</IconButton>
 						</CardActions>
 					</Link>
-					<IconButton onClick={deleteTruck}>Delete</IconButton>
+					<IconButton onClick={submitDelete}>Delete</IconButton>
 				</CardActions>
 			</Card>
 		</Span>
 	);
 };
 
-// function mapStateToProps (state){
-// 	return { state: state };
-// }
+function mapStateToProps (state){
+	return state;
+}
 
-// const mapDispatchToProps = {
-// 	//ACTIONS HERE
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ATruckCard);
-export default ATruckCard;
+export default connect(mapStateToProps, { deleteTruck })(ATruckCard);

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import { login } from '../actions/actions';
 import { Wrapper, LoginPage, Button } from '../styles/Login.js';
 import axios from 'axios';
