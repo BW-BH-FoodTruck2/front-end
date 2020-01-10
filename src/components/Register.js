@@ -20,16 +20,6 @@ const Registration = props => {
     location: ''
   });
 
-  
-
-  const [formErrors, setFormErrors] = useState({
-    username: "",
-    password: "",
-  });
-  const [usernameValid, setUsernameValid] = useState(false);
-  const [passwordValid, setPasswordValid] = useState(false);
-  const [confirmPasswordValid, setConfirmPasswordValid] = useState(false);
-
   const [confirmation, setConfirmation] = useState(false);
 
   //Login on form submit
@@ -51,6 +41,15 @@ const Registration = props => {
   const toggleConfirm = () => {
     setConfirmation(!confirmation);
   }
+
+  
+  const [formErrors, setFormErrors] = useState({
+    username: "",
+    password: "",
+  });
+  const [usernameValid, setUsernameValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [confirmPasswordValid, setConfirmPasswordValid] = useState(false);
 
   const validateField = (name, value) => {
     let fieldValidationErrors = formErrors;

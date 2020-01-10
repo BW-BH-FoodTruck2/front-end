@@ -10,6 +10,9 @@ import TruckList from './components/ATruckList';
 import { PrivateRouter } from './components/PrivateRoute';
 import AddTruck from './components/AddTruck';
 import EditTruck from './components/EditTruck';
+import Footer from './components/Footer'
+import styled from 'styled-components';
+
 
 function App (props){
 	const [ isLoggedIn, setIsLoggedIn ] = useState(false);
@@ -43,6 +46,7 @@ function App (props){
 			/>
 			<Route exact path='/addtruck' component={AddTruck} />
 			<Route exact path='/login' component={Login} />
+			
 		</div>
 	);
 }
