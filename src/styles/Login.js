@@ -206,7 +206,7 @@ import styled from 'styled-components';
 
 export const LoginPage = styled.div`
 	width: 100%;
-	background-color: #ffffff;
+	background-color: ffffff#;
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
